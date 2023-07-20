@@ -1,0 +1,40 @@
+class tree:
+  def __init__(self,Data):
+    self.right = None
+    self.left = None
+    self.node = Data
+  def show(self):
+    if self.left:
+      self.left.show()
+    print(self.node)
+    if self.right:
+      self.right.show()
+  def insert(self,newdata): #self=hari
+    if newdata<self.node:
+      if self.left is None:
+        self.left=tree(newdata)
+      else:
+        self.left.insert(newdata)
+    elif newdata>self.node:
+      if self.right is None:
+        self.right=tree(newdata)
+      else:
+        self.right.insert(newdata)
+
+hari=tree(56)
+hari.insert(21)
+hari.insert(47)
+hari.insert(57)
+hari.insert(21)
+hari.insert(24)
+hari.insert(54)
+hari.insert(77)
+hari.insert(33)
+hari.insert(29)
+hari.insert(13)
+hari.insert(44)
+hari.insert(77)
+hari.insert(43)
+hari.insert(-6.5)
+
+hari.show()
